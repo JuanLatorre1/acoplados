@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación Péndulos Acoplados</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <img class="logo" src="../assets/images/icon-removebg-preview.png" alt="logo">
+    <h1>Simulación de <span class="spam">Péndulos Físicos Acoplados</span></h1>
+    <div id="simulation">
+        <canvas id="pendulumCanvas" width="400" height="400" style="border:1px solid #000;"></canvas>
+    </div>
+    <form id="input-section">
+        <label for="theta01">Ángulo inicial del péndulo 1 (rad):</label>
+        <input type="number" id="theta01" step="any" value="1"><br>
+        <label for="theta02">Ángulo inicial del péndulo 2 (rad):</label>
+        <input type="number" id="theta02" step="any" value="1"><br>
+        <label for="m1">Masa del péndulo 1 (kg):</label>
+        <input type="number" id="m1" step="any" value="1"><br>
+        <label for="M1">Masa de la esfera del péndulo 1 (kg):</label>
+        <input type="number" id="M1" step="any" value="1"><br>
+        <label for="L1">Longitud del péndulo 1 (m):</label>
+        <input type="number" id="L1" step="any" value="1"><br>
+        <label for="R1">Radio de la esfera del péndulo 1 (m):</label>
+        <input type="number" id="R1" step="any" value="1"><br>
+        <label for="m2">Masa del péndulo 2 (kg):</label>
+        <input type="number" id="m2" step="any" value="1"><br>
+        <label for="M2">Masa de la esfera del péndulo 2 (kg):</label>
+        <input type="number" id="M2" step="any" value="1"><br>
+        <label for="L2">Longitud del péndulo 2 (m):</label>
+        <input type="number" id="L2" step="any" value="1"><br>
+        <label for="R2">Radio de la esfera del péndulo 2 (m):</label>
+        <input type="number" id="R2" step="any" value="1"><br>
+        <label for="k">Constante de rigidez (N/m):</label>
+<input type="number" id="k" step="any" value="1"><br>
+
+        <button type="button" id="iniciar">Iniciar Simulación</button>
+    </form>
+    
+    <div id="output-section">
+        <div id="equationsContainer">
+            <h3>Ecuaciones de Movimiento</h3>
+            <p id="equation1"></p>
+            <p id="equation2"></p>
+        </div>
+        <h2>Resultados</h2>
+        <p>Frecuencia Natural (ω₁): <span id="omegaZero1"></span></p>
+        <p>Frecuencia Natural (ω₂): <span id="omegaZero2"></span></p>
+        <p>Relacion amplitudes (1er modo) (A1/B1): <span id="amplitude1"></span></p>
+        <p>Relacion amplitudes (2do modo) (A2/B2): <span id="amplitude2"></span></p>
+        <p>Fase Inicial Péndulo 1 (ϕ₁): <span id="phase1"></span></p>
+        <p>Fase Inicial Péndulo 2 (ϕ₂): <span id="phase2"></span></p>
+        <p>Amplitud 1 (A1): <span id="amp1"></span></p>
+        <p>Amplitud 2 (A2): <span id="amp2"></span></p>
+        <div id="modoVibracion">Modo de vibración: </div>
+    </div>
+    <div id="simulation">
+        <canvas id="positionChart1" width="200" height="100"></canvas>
+        <canvas id="positionChart2" width="200" height="100"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
